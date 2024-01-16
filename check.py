@@ -6,12 +6,12 @@ from io import BytesIO
 from pathlib import Path
 from typing import Dict, Any
 from zipfile import ZipFile, ZIP_DEFLATED
-
+import ssl
 URL = 'https://wdpo.dpieczynski.pl'
-
+ssl._create_default_https_context = ssl._create_unverified_context
 
 def main():
-    student_id = 000000  # Tutaj należy wpisać swój numer indeksu
+    student_id = 151126  # Tutaj należy wpisać swój numer indeksu
 
     data = BytesIO()
     with ZipFile(data, 'w', ZIP_DEFLATED) as zip_file:
